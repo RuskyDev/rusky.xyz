@@ -79,7 +79,11 @@ export default function About() {
                         <TechIconsRow label="Frontend" icons="html,css,js,react,nextjs,tailwindcss,electron" />
                         <TechIconsRow label="Databases" icons="sqlite,mysql,postgres,mongodb" />
                         <TechIconsRow label="Linux" icons="arch,ubuntu,bash,powershell" />
-                        <TechIconsRow label="Tools" icons="git,github,npm,postman,ngrok,docker,nginx,mermaid,obsidian,wordpress" />
+
+                        <TechIconsRow label="DevOps" icons="git,github,docker,nginx,ngrok,postman,npm" />
+                        <TechIconsRow label="Productivity" icons="obsidian,mermaid" />
+                        <TechIconsRow label="CMS" icons="wordpress" />
+
                         <TechIconsRow label="Platforms" icons="vercel,netlify,cloudflare" />
                     </div>
                 </div>
