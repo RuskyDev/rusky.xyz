@@ -75,11 +75,12 @@ export default function About() {
                 <div className="mt-6">
                     <h2 className="text-3xl font-bold text-white mb-6">Tech Stack</h2>
                     <div className="flex flex-col gap-1.5">
-                        <TechIconsRow label="Backend" icons="python,fastapi,nodejs,express,mongodb" />
-                        <TechIconsRow label="Frontend" icons="js,react,nextjs,tailwindcss,electron" />
-                        <TechIconsRow label="Databases" icons="sqlite,mysql,postgres" />
-                        <TechIconsRow label="Linux" icons="arch,ubuntu,bash" />
-                        <TechIconsRow label="Tools" icons="git,postman,ngrok,docker,nginx" />
+                        <TechIconsRow label="Backend" icons="php,python,fastapi,nodejs,express" />
+                        <TechIconsRow label="Frontend" icons="html,css,js,react,nextjs,tailwindcss,electron" />
+                        <TechIconsRow label="Databases" icons="sqlite,mysql,postgres,mongodb" />
+                        <TechIconsRow label="Linux" icons="arch,ubuntu,bash,powershell" />
+                        <TechIconsRow label="Tools" icons="git,github,npm,postman,ngrok,docker,nginx,mermaid,obsidian,wordpress" />
+                        <TechIconsRow label="Platforms" icons="vercel,netlify,cloudflare" />
                     </div>
                 </div>
 
@@ -90,46 +91,46 @@ export default function About() {
                     <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         {loading
                             ? [...Array(2)].map((_, idx) => (
-                                  <div
-                                      key={idx}
-                                      className="bg-gray-700/40 animate-pulse rounded-2xl p-4 h-32"
-                                  >
-                                      <div className="bg-gray-600 h-5 w-3/4 rounded mb-2" />
-                                      <div className="bg-gray-600 h-3 w-full rounded" />
-                                      <div className="bg-gray-600 h-3 w-5/6 rounded mt-2" />
-                                  </div>
-                              ))
+                                <div
+                                    key={idx}
+                                    className="bg-gray-700/40 animate-pulse rounded-2xl p-4 h-32"
+                                >
+                                    <div className="bg-gray-600 h-5 w-3/4 rounded mb-2" />
+                                    <div className="bg-gray-600 h-3 w-full rounded" />
+                                    <div className="bg-gray-600 h-3 w-5/6 rounded mt-2" />
+                                </div>
+                            ))
                             : projects.map((project, idx) => (
-                                  <motion.a
-                                      aria-label={`Visit ${project.name} on GitHub`}
-                                      key={idx}
-                                      href={project.html_url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      initial={{ opacity: 0, y: 20 }}
-                                      whileInView={{ opacity: 1, y: 0 }}
-                                      whileHover={{
-                                          scale: 1.03,
-                                          boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-                                          opacity: 0.95,
-                                      }}
-                                      transition={{
-                                          duration: 0.3,
-                                          ease: [0.25, 0.1, 0.25, 1],
-                                      }}
-                                      className="bg-white/10 border border-white/20 rounded-2xl p-4 text-white shadow-md transition-shadow cursor-pointer"
-                                  >
-                                      <h3
-                                          className="text-xl font-semibold mb-2"
-                                          title={project.name}
-                                      >
-                                          {project.name}
-                                      </h3>
-                                      <p className="text-sm text-white/80">
-                                          {project.description || 'No description available.'}
-                                      </p>
-                                  </motion.a>
-                              ))}
+                                <motion.a
+                                    aria-label={`Visit ${project.name} on GitHub`}
+                                    key={idx}
+                                    href={project.html_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                                        opacity: 0.95,
+                                    }}
+                                    transition={{
+                                        duration: 0.3,
+                                        ease: [0.25, 0.1, 0.25, 1],
+                                    }}
+                                    className="bg-white/10 border border-white/20 rounded-2xl p-4 text-white shadow-md transition-shadow cursor-pointer"
+                                >
+                                    <h3
+                                        className="text-xl font-semibold mb-2"
+                                        title={project.name}
+                                    >
+                                        {project.name}
+                                    </h3>
+                                    <p className="text-sm text-white/80">
+                                        {project.description || 'No description available.'}
+                                    </p>
+                                </motion.a>
+                            ))}
                     </div>
                 </div>
             </div>

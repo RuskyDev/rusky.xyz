@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>rusky.xyz</title>
-        <link rel="icon" href="/assets/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <ProjectsProvider>
         <main style={{ fontFamily: GeistSans.style.fontFamily }}>
