@@ -1,34 +1,25 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from "react";
 
 const ProjectsContext = createContext();
 
-const projectUrls = [
-  'https://github.com/RuskyDev/bloxstrap-optimization-flags',
-  'https://github.com/RuskyDev/ruskydev.github.io',
+const customProjects = [
+  {
+    name: "Arenoi",
+    url: "https://arenoi.com",
+    description: "Arenoi is the world's first emotional intelligence AI for Gen Z.",
+    icon: "https://framerusercontent.com/images/IonYEchwRZXK3Gm4JqD5h94UOA.png?scale-down-to=512", // <-- add icon URL
+  },
 ];
+
 
 export function ProjectsProvider({ children }) {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  const fetchProjects = async () => {
-    try {
-      const res = await fetch('/api/github/getRepos');
-      const json = await res.json();
-
-      if (!json.success) throw new Error('Fetch failed');
-
-      setProjects(json.data);
-    } catch (error) {
-      console.error('Error fetching GitHub repos:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  fetchProjects();
-}, []);
+    setProjects(customProjects);
+    setLoading(false);
+  }, []);
 
   return (
     <ProjectsContext.Provider value={{ projects, loading }}>
