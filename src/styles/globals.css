@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'BukhariScript';
+  src: url('/fonts/BukhariScript.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+body {
+  @apply text-white bg-black;
+  background: linear-gradient(120deg, #120B29, #0A1F38, #025063);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: visualizerFlow 8s ease-in-out infinite;
+}
+
+
+
+@keyframes visualizerFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

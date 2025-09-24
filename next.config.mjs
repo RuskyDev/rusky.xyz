@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {"devIndicators": false};
+const nextConfig = {
+  devIndicators: false,
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+        permanent: true,
+      },
+    ]
+  },
+}
 
-export default nextConfig;
+export default nextConfig
