@@ -4,9 +4,30 @@ import Navbar from '@/components/ui/Navbar'
 import Script from 'next/script'
 
 export const metadata = {
-  title: 'rusky.xyz',
-  icons: {
-    icon: '/favicon.ico',
+  title: 'Rusky',
+  description: 'I build code that works for web, mobile, desktop, and beyond.',
+  // keywords: 'portfolio, projects, web development, Rusky',
+  icons: { icon: '/favicon.ico' },
+  openGraph: {
+    title: 'Rusky',
+    description: 'I build code that works for web, mobile, desktop, and beyond.',
+    url: 'https://www.rusky.xyz',
+    siteName: 'rusky.xyz',
+    images: [
+      {
+        url: 'https://www.rusky.xyz/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Rusky',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rusky',
+    description: 'I build code that works for web, mobile, desktop, and beyond.',
+    image: 'https://www.rusky.xyz/og-image.png',
   },
 }
 
@@ -15,16 +36,41 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="canonical" href="https://www.rusky.xyz/" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+      </head>
       <body style={{ fontFamily: GeistSans.style.fontFamily }} suppressHydrationWarning>
-        <Navbar
-          menuItems={[
-            { label: 'Home', href: '/' },
-            { label: 'About', href: '/about' },
-            { label: 'Portfolio', href: '/portfolio' },
-            { label: 'Contact', href: '/contact' },
-          ]}
-        />
-        {children}
+        <header>
+          <Navbar
+            menuItems={[
+              { label: 'Home', href: '/' },
+              { label: 'About', href: '/about' },
+              { label: 'Portfolio', href: '/portfolio' },
+              { label: 'Contact', href: '/contact' },
+            ]}
+          />
+        </header>
+        <main>{children}</main>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Rusky",
+            "url": "https://www.rusky.xyz",
+            "sameAs": [
+              "https://twitter.com/ruskydev",
+              "https://github.com/ruskydev",
+              "https://instagram.com/ruskydev",
+              "https://discord.com/users/969507085316399154"
+            ],
+            "jobTitle": "Full Stack Developer",
+            "worksFor": { "@type": "Organization", "name": "Freelance" }
+          })}
+        </script>
+
         {isProd && (
           <>
             <Script
