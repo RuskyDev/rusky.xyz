@@ -36,6 +36,16 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="canonical" href="https://www.rusky.xyz/" />
+        <link
+          rel="preload"
+          href="/fonts/BukhariScript.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body style={{ fontFamily: GeistSans.style.fontFamily }} suppressHydrationWarning>
         <header>
           <Navbar
