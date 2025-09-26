@@ -12,14 +12,6 @@ import {
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { sendMessage } from "@/libs/sendMessage";
 
-export const metadata = {
-  title: 'Contact | Rusky',
-  description: 'Get in touch with Rusky.',
-  alternates: {
-    canonical: '/contact',
-  },
-}
-
 export default function ContactPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
