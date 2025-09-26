@@ -60,17 +60,20 @@ export default function ContactPage() {
           {
             href: "https://github.com/ruskydev",
             label: "GitHub",
-            icon: <Github size={20} />,
+            icon: <Github size={20} aria-hidden="true" />,
+            aria: "Visit my GitHub profile",
           },
           {
             href: "mailto:iamayaanalee@gmail.com",
             label: "Email",
-            icon: <Mail size={20} />,
+            icon: <Mail size={20} aria-hidden="true" />,
+            aria: "Send me an email",
           },
           {
             href: "https://discord.com/users/969507085316399154",
             label: "Discord",
-            icon: <MessageCircle size={20} />,
+            icon: <MessageCircle size={20} aria-hidden="true" />,
+            aria: "Connect with me on Discord",
           },
         ].map((item, i) => (
           <motion.a
@@ -78,6 +81,7 @@ export default function ContactPage() {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={item.aria}
             className="flex items-center gap-2 hover:text-cyan-400 transition-colors duration-500 ease-in-out cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,12 +94,14 @@ export default function ContactPage() {
 
         <motion.a
           onClick={() => setIsOpen(true)}
+          aria-label="Open contact form to send a message"
           className="flex items-center gap-2 hover:text-cyan-400 transition-colors duration-500 ease-in-out cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.4, ease: "easeOut" }}
         >
           <motion.div
+            aria-hidden="true"
             animate={{ rotate: [0, 20, -10, 20, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -134,6 +140,7 @@ export default function ContactPage() {
                     type="text"
                     name="name"
                     placeholder="Your Name"
+                    aria-label="Your Name"
                     disabled={isSubmitting}
                     whileFocus={{ scale: 1.02 }}
                     transition={{ duration: 0.15 }}
@@ -143,6 +150,7 @@ export default function ContactPage() {
                     type="email"
                     name="email"
                     placeholder="Your Email"
+                    aria-label="Your Email"
                     disabled={isSubmitting}
                     whileFocus={{ scale: 1.02 }}
                     transition={{ duration: 0.15 }}
@@ -151,6 +159,7 @@ export default function ContactPage() {
                   <motion.textarea
                     name="message"
                     placeholder="Your Message"
+                    aria-label="Your Message"
                     rows="4"
                     disabled={isSubmitting}
                     whileFocus={{ scale: 1.02 }}
@@ -172,6 +181,7 @@ export default function ContactPage() {
                     <button
                       type="button"
                       onClick={() => setIsOpen(false)}
+                      aria-label="Cancel and close the contact form"
                       disabled={isSubmitting}
                       className="px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
@@ -179,12 +189,14 @@ export default function ContactPage() {
                     </button>
                     <motion.button
                       type="submit"
+                      aria-label="Send your message"
                       disabled={isSubmitting}
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-2 bg-cyan-500 text-black rounded-lg hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                     >
                       {isSubmitting ? (
                         <motion.div
+                          aria-hidden="true"
                           animate={{ rotate: 360 }}
                           transition={{
                             repeat: Infinity,
@@ -206,6 +218,7 @@ export default function ContactPage() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    aria-hidden="true"
                   >
                     <CheckCircle2 size={64} className="text-green-400" />
                   </motion.div>

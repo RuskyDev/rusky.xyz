@@ -31,10 +31,16 @@ export default function Home() {
         </h2>
 
         <div className="flex justify-center gap-4">
-          <Button onClick={() => router.push('/portfolio')}>See My Work</Button>
+          <Button
+            onClick={() => router.push('/portfolio')}
+            ariaLabel="See my portfolio work"
+          >
+            See My Work
+          </Button>
           <button
             onClick={() => router.push('/contact')}
             className="text-white cursor-pointer hover:text-cyan-400 transition-colors duration-500 ease-in-out"
+            aria-label="Go to contact page"
           >
             Contact Me
           </button>

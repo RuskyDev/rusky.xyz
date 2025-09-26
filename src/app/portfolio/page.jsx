@@ -34,7 +34,10 @@ export default function PortfolioPage() {
             className="rounded-xl overflow-hidden bg-gradient-to-br from-gray-800/90 to-gray-900/90 border border-white/10 hover:border-cyan-500/40 transition-colors"
           >
             <div className="p-6 border-b border-white/10 flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-sm text-white/70">
+              <div
+                className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-sm text-white/70"
+                aria-hidden="true"
+              >
                 Icon
               </div>
               <h3 className="text-lg font-semibold text-white">{item.name}</h3>
@@ -65,6 +68,7 @@ export default function PortfolioPage() {
                   href={item.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`View live demo of ${item.name}`}
                   className="px-4 py-2 bg-cyan-500 text-black rounded-lg text-sm font-medium hover:bg-cyan-400 transition-colors"
                 >
                   Live Demo
@@ -73,6 +77,7 @@ export default function PortfolioPage() {
                   href={item.repo}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`View GitHub repository for ${item.name}`}
                   className="px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/20 transition-colors"
                 >
                   GitHub

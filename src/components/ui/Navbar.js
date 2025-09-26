@@ -47,6 +47,7 @@ export default function Navbar({ menuItems = [] }) {
         <button
           className={styles.hamburger}
           onClick={() => setMenuOpen(prev => !prev)}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

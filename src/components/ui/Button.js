@@ -2,12 +2,13 @@
 import { motion } from 'framer-motion';
 import styles from './Button.module.css';
 
-export default function Button({ children, onClick, type = 'button' }) {
+export default function Button({ children, onClick, type = 'button', ariaLabel }) {
   return (
     <motion.button
       type={type}
       onClick={onClick}
       className={styles.button}
+      aria-label={ariaLabel}
       whileHover={{
         scale: 1.03,
         boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
