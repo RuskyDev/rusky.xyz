@@ -44,7 +44,7 @@
 }
 
 .navLinks a:hover {
-  color: #22d3ee; /* Tailwind cyan-400 */
+  color: #22d3ee;
 }
 
 @media (max-width: 600px) {

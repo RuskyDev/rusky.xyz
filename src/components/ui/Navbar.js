@@ -79,10 +79,10 @@ export default function Navbar({ menuItems = [] }) {
             />
             <motion.ul
               className={`${styles.navLinks} ${styles.mobile}`}
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', stiffness: 80, damping: 20 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
               {menuItems.map((item) => (
                 <motion.li key={item.label} whileTap={{ scale: 0.95 }}>

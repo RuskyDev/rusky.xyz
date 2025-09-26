@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@hcaptcha/react-hcaptcha": "^1.12.1",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/postcss": "^4.1.11",
     "class-variance-authority": "^0.7.1",

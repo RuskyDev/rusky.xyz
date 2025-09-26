@@ -15,8 +15,6 @@ body {
   animation: visualizerFlow 8s ease-in-out infinite;
 }
 
-
-
 @keyframes visualizerFlow {
   0% {
     background-position: 0% 50%;
@@ -27,4 +25,8 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+button, a {
+  cursor: pointer;
 }
