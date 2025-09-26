@@ -10,6 +10,14 @@ const techStack = [
   { label: "Hosting", icons: "vercel" },
 ];
 
+export const metadata = {
+  title: 'About | Rusky',
+  description: 'Learn more about Rusky.',
+  alternates: {
+    canonical: '/about',
+  },
+}
+
 export default function AboutPage() {
   return (
     <main className="mt-24 px-4 sm:px-6 md:px-12 lg:px-28">

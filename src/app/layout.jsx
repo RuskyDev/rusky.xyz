@@ -4,9 +4,9 @@ import Navbar from '@/components/ui/Navbar'
 import Script from 'next/script'
 
 export const metadata = {
+  metadataBase: new URL('https://www.rusky.xyz'),
   title: 'Rusky',
   description: 'I build code that works for web, mobile, desktop, and beyond.',
-  // keywords: 'portfolio, projects, web development, Rusky',
   icons: { icon: '/favicon.ico' },
   openGraph: {
     title: 'Rusky',
@@ -27,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Rusky',
     description: 'I build code that works for web, mobile, desktop, and beyond.',
-    image: 'https://www.rusky.xyz/og-image.png',
+    images: ['https://www.rusky.xyz/og-image.png'],
   },
 }
 
@@ -36,11 +36,6 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="canonical" href="https://www.rusky.xyz/" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-      </head>
       <body style={{ fontFamily: GeistSans.style.fontFamily }} suppressHydrationWarning>
         <header>
           <Navbar

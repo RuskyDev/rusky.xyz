@@ -2,6 +2,14 @@
 
 import { motion } from "framer-motion";
 
+export const metadata = {
+  title: 'Portfolio | Rusky',
+  description: 'See Rusky’s projects.',
+  alternates: {
+    canonical: '/portfolio',
+  },
+}
+
 export default function PortfolioPage() {
   const portfolio = [
     {
