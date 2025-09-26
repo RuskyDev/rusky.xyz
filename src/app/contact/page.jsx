@@ -161,8 +161,8 @@ export default function ContactPage() {
                   {captchaStep && (
                     <div className="flex justify-center">
                       <HCaptcha
-                        sitekey="df107af2-8086-48ec-a6dc-506e1e4459c2"
-                        onVerify={handleCaptchaVerify}
+                        sitekey=""
+                        onVerify={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
                         ref={captchaRef}
                       />
                     </div>
